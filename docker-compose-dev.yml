@@ -34,3 +34,7 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+
+  pg_loyalty:
+    ports:
+      - "5493:5432"

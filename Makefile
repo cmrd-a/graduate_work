@@ -24,7 +24,7 @@ auth_debug:
 
 
 dev_up:
-	docker compose -f docker-compose-prod.yml -f docker-compose-databases.yml -f docker-compose-dev.yml up pg_notifications notifications_rabbitmq pg_auth redis_auth -d
+	docker compose -f docker-compose-prod.yml -f docker-compose-databases.yml -f docker-compose-dev.yml up pg_loyalty -d
 
 dev_down:
 	docker compose -f docker-compose-prod.yml -f docker-compose-databases.yml -f docker-compose-dev.yml down

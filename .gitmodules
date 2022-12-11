@@ -1,0 +1,3 @@
+[submodule "loyalty"]
+	path = loyalty
+	url = git@github.com:cmrd-a/loyalty.git

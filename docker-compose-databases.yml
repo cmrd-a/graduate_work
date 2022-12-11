@@ -49,9 +49,21 @@ services:
       - pg_notifications:/var/lib/postgresql/data
       - ./deploy/postgres/notifications:/docker-entrypoint-initdb.d
 
+  pg_loyalty:
+    image: postgres:15.1
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${LOYALTY_POSTGRES_DB}
+      - POSTGRES_USER=${LOYALTY_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${LOYALTY_POSTGRES_PASSWORD}
+    volumes:
+      - pg_loyalty:/var/lib/postgresql/data
+
 volumes:
   pg_movies:
   pg_auth:
   es_data:
   mongo_ugc:
   pg_notifications:
+  pg_loyalty:
