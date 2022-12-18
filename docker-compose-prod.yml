@@ -36,14 +36,6 @@ services:
         gelf-address: udp://127.0.0.1:5047
         tag: auth
 
-  ugc:
-    build:
-      context: ugc
-    env_file:
-      - .env
-    depends_on:
-      - mongo_ugc
-
   jaeger:
     image: jaegertracing/all-in-one
     ports:
@@ -108,7 +100,6 @@ services:
       - django_admin_panel
       - fastapi_app
       - auth
-      - ugc
 
 
 volumes:

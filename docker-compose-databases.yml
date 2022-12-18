@@ -30,13 +30,6 @@ services:
   redis_auth:
     image: redis:7.0.4
 
-  mongo_ugc:
-    image: mongo:6.0.2
-    volumes:
-      - mongo_ugc:/mongo
-    env_file:
-      - .env
-
   pg_notifications:
     image: postgres:14.3
     env_file:
@@ -64,6 +57,5 @@ volumes:
   pg_movies:
   pg_auth:
   es_data:
-  mongo_ugc:
   pg_notifications:
   pg_loyalty:
