@@ -22,10 +22,6 @@ services:
     ports:
       - "6390:6379"
 
-  mongo_ugc:
-    ports:
-      - "27017:27017"
-
   pg_notifications:
     ports:
       - "5492:5432"
@@ -38,3 +34,4 @@ services:
   pg_loyalty:
     ports:
       - "5493:5432"
+    command: ["postgres", "-c", "log_statement=all"]
