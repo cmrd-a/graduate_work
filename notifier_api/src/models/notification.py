@@ -14,3 +14,4 @@ class NotificationTaskV1(Base):
     channel: NotificationChannelV1
     category: NotificationCategoryV1
     send_time: datetime
+    is_unique: bool = False

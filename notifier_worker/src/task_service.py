@@ -15,10 +15,10 @@ from jinja2 import Environment, FileSystemLoader
 from psycopg2.extensions import connection as pg_connection
 from psycopg2.extras import NamedTupleCursor
 
+from tools import generate_promo
 from config import settings
 
 logger = logging.getLogger(__name__)
-
 
 env = Environment(loader=FileSystemLoader(f"{os.path.dirname(__file__)}/templates"))
 
@@ -106,7 +106,7 @@ class TaskService:
                     )
 
     def process_email_task(
-        self, task_id: uuid, users_ids: list[int], template_name: str, variables: dict, category: str
+            self, task_id: uuid, users_ids: list[int], template_name: str, variables: dict, category: str
     ):
         users = httpx.post("http://auth:9000/auth/admin/v1/get-users-info", json={"users_ids": users_ids}).json()
         for user in users:

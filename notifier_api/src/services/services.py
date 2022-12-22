@@ -17,8 +17,8 @@ class PGService:
         async with self.conn.cursor() as cur:
             sql = """
                 INSERT INTO notifications 
-                (users_ids, template_name, variables, status, channel, category, send_time) 
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
+                (users_ids, template_name, variables, status, channel, category, send_time, is_unique) 
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """
 
             args = (
@@ -29,6 +29,7 @@ class PGService:
                 notification.channel.name,
                 notification.category.name,
                 notification.send_time.replace(tzinfo=pytz.utc).isoformat(),
+                notification.is_unique,
             )
             await cur.execute(sql, args)
             await self.conn.commit()
@@ -36,6 +37,6 @@ class PGService:
 
 @lru_cache()
 def get_postgres_service(
-    postgres_connection: AsyncConnection = Depends(get_postgres),
+        postgres_connection: AsyncConnection = Depends(get_postgres),
 ) -> PGService:
     return PGService(postgres_connection)

@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS public.notifications (
     variables json,
     status status NOT NULL,
     channel notification_channel NOT NULL,
+    is_unique BOOL DEFAULT FALSE NOT NULL ,
     category category NOT NULL,
     send_time timestamp with time zone NOT NULL,
 
