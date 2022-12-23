@@ -5,7 +5,7 @@ from uuid import UUID
 from aiokafka import AIOKafkaProducer
 from fastapi import Depends
 
-from db.kafka_client import get_kafka
+from database.db import get_kafka
 
 
 class KafkaService:
