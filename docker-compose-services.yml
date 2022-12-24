@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
 
   etl:
@@ -101,6 +99,15 @@ services:
       - fastapi_app
       - auth
 
+  loyalty:
+    build:
+      context: loyalty
+    ports:
+      - "50051:50051"
+    env_file:
+      - .env
+    depends_on:
+      - pg_loyalty
 
 volumes:
   etl_state:
