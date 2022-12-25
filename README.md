@@ -1,6 +1,8 @@
-# Проектная работа 10 спринта, когорта 18, команда #8
+# Дипломный сервис "Система лояльности", когорта 18, команда #2
 
-https://github.com/cmrd-a/notifications_sprint_1
+https://github.com/cmrd-a/loyalty
+https://github.com/cmrd-a/graduate_work
+
 
 ## Проект "Фильмотека"
 Состоит из:
