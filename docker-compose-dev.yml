@@ -33,3 +33,7 @@ services:
     ports:
       - "5493:5432"
     command: ["postgres", "-c", "log_statement=all", "-c", "log_connections=true", "-c", "log_disconnections=true"]
+
+  notifier_api:
+    ports:
+      - "8020:8020"

@@ -79,6 +79,8 @@ services:
   notifier_sender:
     build:
       context: notifier_sender
+    ports:
+      - "465:465"
     env_file:
       - .env
     depends_on:

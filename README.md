@@ -48,3 +48,5 @@ Manual config -> Address: `http://elasticlogs:9200`
 @cmrd-a - тимлид
 
 @nu-kotov - разработчик
+
+@White656 - разработчик

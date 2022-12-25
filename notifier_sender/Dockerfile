@@ -3,6 +3,8 @@ FROM python:3.10
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+EXPOSE 465
+
 WORKDIR /opt/app
 
 COPY requirements.txt requirements.txt

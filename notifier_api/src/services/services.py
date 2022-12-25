@@ -5,7 +5,7 @@ import pytz
 from fastapi import Depends
 from psycopg import AsyncConnection
 
-from database.db import get_postgres
+from db.postgres import get_postgres
 from models.notification import NotificationTaskV1
 
 

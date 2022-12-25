@@ -5,10 +5,10 @@ from aioredis import Redis
 from elasticsearch import AsyncElasticsearch, NotFoundError
 from fastapi import Depends
 
-from database.db import get_elastic
-from database.db import get_redis
+from db.elastic import get_elastic
+from db.redis import get_redis
 from models.es_models import Film, Films
-from services.services import ElasticService, RedisCache, Cache
+from services.common import ElasticService, RedisCache, Cache
 
 
 class ApiSortOptions(str, Enum):

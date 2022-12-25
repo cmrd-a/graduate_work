@@ -1,5 +1,5 @@
 CREATE TYPE status AS ENUM ('created', 'processed', 'error');
-CREATE TYPE category AS ENUM ('service', 'content_updates', 'recommendations');
+CREATE TYPE category AS ENUM ('service', 'content_updates', 'recommendations', 'promo');
 CREATE TYPE notification_channel AS ENUM ('email', 'push', 'sms');
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA public;

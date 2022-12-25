@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     logstash_host: str = Field(env="LOGSTASH_HOST")
     logstash_port: int = Field(env="LOGSTASH_PORT")
 
-    notificator_url: str = Field(env="NOTIFICATOR_URL", default="http://localhost")
+    notifier_api_url: str = Field(env="NOTIFIER_API_URL", default="http://localhost")
     confirm_host: str = Field(env="CONFIRM_HOST", default="http://localhost")
 
     @property

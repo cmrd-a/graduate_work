@@ -50,19 +50,20 @@ def register(body):
     db.session.add(new_user)
     db.session.commit()
     httpx.post(
-        url=current_app.config["NOTIFICATOR_URL"],
-        data={
+        url=f"{current_app.config['NOTIFIER_API_URL']}/notifier/v1/notifications/notification",
+        json={
             "users_ids": [new_user.id],
             "template_name": "email_verified.html",
             "status": "created",
             "channel": "email",
             "category": "service",
             "variables": {
+                "subject": "Подтверждение email",
                 "email_verify_url": f"{current_app.config['CONFIRM_HOST']}/v1/confirm"
                 f"/{generate_confirmation_token(new_user.email)}",
                 "text": "Добрый день, для подтверждения электронной почты, перейдите по ссылке",
             },
-            "send_time": datetime.datetime.now(),
+            "send_time": datetime.datetime.now().isoformat(),
         },
     )
 

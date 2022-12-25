@@ -1,16 +1,13 @@
 import logging
-
 import psycopg
 import uvicorn
-from fastapi import FastAPI, Header
+from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
-from psycopg2.extras import NamedTupleCursor
 
 from api.v1 import notifications
 from core.config import config
 from core.logger import LOGGING
 from db import postgres
-
 
 app = FastAPI(
     title=config.project_name,

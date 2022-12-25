@@ -22,7 +22,6 @@ def main():
     channel = connection.channel()
 
     result = channel.queue_declare(queue="email-channel.v1", durable=True)
-    # result = channel.queue_declare(queue='', exclusive=True)
     channel.basic_qos(prefetch_count=1)
 
     channel.basic_consume(queue=result.method.queue, on_message_callback=send_email)
