@@ -47,8 +47,8 @@ Manual config -> Address: `http://elasticlogs:9200`
  - `make black` - форматировать код
 
 ---
-@cmrd-a - тимлид
+[cmrd-a](https://github.com/cmrd-a) - тимлид
 
-@nu-kotov - разработчик
+[nu-kotov](https://github.com/nu-kotov) - разработчик
 
-@White656 - разработчик
+[White656](https://github.com/White656) - разработчик
