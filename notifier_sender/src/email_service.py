@@ -20,9 +20,6 @@ class EmailService:
         self.server = smtplib.SMTP_SSL(settings.smtp_host, settings.smtp_port)
         self.server.login(sender_user, settings.sender_password)
 
-    def __del__(self):
-        self.server.close()
-
     def send_message(self, params: EmailMessageParams):
         message = EmailMessage()
         message["From"] = sender_user

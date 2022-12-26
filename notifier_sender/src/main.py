@@ -1,11 +1,10 @@
 import json
-import os
-import sys
+import logging
 
 import pika
 
-from email_service import EmailService, EmailMessageParams
 from config import settings
+from email_service import EmailService, EmailMessageParams
 
 email_service = None
 
@@ -29,13 +28,10 @@ def main():
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
     email_service = EmailService()
     try:
         main()
     except KeyboardInterrupt:
-        print("Interrupted")
-        del email_service
-        try:
-            sys.exit(0)
-        except SystemExit:
-            os._exit(0)  # noqa
+        logging.info("Graceful shutdown")
+        email_service.server.close()
